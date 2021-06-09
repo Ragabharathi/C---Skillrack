@@ -1,1 +1,1 @@
-# Pascal-triangle
+# skillrack average challenge in c

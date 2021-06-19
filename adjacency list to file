@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+void writeAdjacencyListToFile(int N, int adjacencyMatrix[N][N])
+{
+    FILE *fp = fopen("adjacencylist.txt", "w");
+    
+    for(int i=0;i<N;i++) {
+        fprintf(fp, "[%d]", i+1);
+        for(int j=0;j<N;j++) {
+            if(adjacencyMatrix[i][j]==1){
+                fprintf(fp, " -> %d" , j+1);
+            }
+        }
+        fprintf(fp, " -> NULL\n");
+    }
+    fclose(fp);
+}
+void outputAdjacencyListFile()
+{
+    FILE *fp = fopen("adjacencylist.txt","r");
+    char ch;
+    while((ch = fgetc(fp)) != EOF)
+    {
+        printf("%c", ch);
+    }
+    fclose(fp);
+}
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    int adjacencyMatrix[N][N];
+    for(int row = 0; row < N; row++)
+    {
+        for(int col = 0; col < N; col++)
+        {
+            scanf("%d", &adjacencyMatrix[row][col]);
+        }
+    }
+    writeAdjacencyListToFile(N, adjacencyMatrix);
+    printf("Adjacency List:\n");
+    outputAdjacencyListFile();
+    return 0;
+}

@@ -30,7 +30,7 @@ int main()
        {
           if(s[i]=='x')
           {
-             if(s[j]!='-')
+             if(s[j]!='-') 
              s1=s[j]-'0';
              else
              {

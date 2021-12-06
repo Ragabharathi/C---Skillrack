@@ -30,7 +30,7 @@ int main()
     }
     for(int i=0;i<11;i++){
         for(int j=0;j<12;j++){
-            if(m[i][j]=='P'){
+            if(m[i][j]=='P'){  
                 printf("%02d:%02d PM\n",i+1,j*5);
             }
         }
